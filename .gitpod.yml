@@ -9,4 +9,4 @@ tasks:
       poetry self add poetry-multiproject-plugin
       poetry self add poetry-dotenv-plugin
       poetry install --with=dev
-
+      cp sample.env .env
