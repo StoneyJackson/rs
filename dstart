@@ -27,14 +27,14 @@ if [[ -z "$VIRTUAL_ENV" && $VIRTUAL_ENV == *"rs/.venv" ]]; then
 fi
 
 # kill previously running servers if present
-if [[ "$SERVICE" == "all" || "$SERVICE" == "stopall" ]]; then
-    lsof -t -i tcp:8100 | xargs kill
-    lsof -t -i tcp:8101 | xargs kill
-    lsof -t -i tcp:8102 | xargs kill
-    lsof -t -i tcp:8103 | xargs kill
-    # wait for the servers to stop
-    sleep 5
-fi
+# if [[ "$SERVICE" == "all" || "$SERVICE" == "stopall" ]]; then
+#     lsof -t -i tcp:8100 | xargs kill
+#     lsof -t -i tcp:8101 | xargs kill
+#     lsof -t -i tcp:8102 | xargs kill
+#     lsof -t -i tcp:8103 | xargs kill
+#     # wait for the servers to stop
+#     sleep 5
+# fi
 
 if [ "$SERVICE" == "all" ]; then
     docker compose --profile dev up -d nginx_dstart_dev
